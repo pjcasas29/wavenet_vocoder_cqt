@@ -17,8 +17,8 @@ hparams = HParams(
     # input and softmax output are assumed.
     # **NOTE**: if you change the one of the two parameters below, you need to
     # re-run preprocessing before training.
-    input_type="raw",
-    quantize_channels=65536,  # 65536 or 256
+    input_type="mulaw-quantize",
+    quantize_channels=256,  # 65536 or 256
 
     # Audio:
     # time-domain pre/post-processing
@@ -55,7 +55,7 @@ hparams = HParams(
     # This should equal to `quantize_channels` if mu-law quantize enabled
     # otherwise num_mixture * 3 (pi, mean, log_scale)
     # single mixture case: 2
-    out_channels=10 * 3,
+    out_channels=256,
     layers=24,
     stacks=4,
     residual_channels=128,
